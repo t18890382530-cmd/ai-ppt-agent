@@ -1,0 +1,6 @@
+.env
+__pycache__/
+*.pyc
+app old.py
+app2OLD.py
+app3old.py

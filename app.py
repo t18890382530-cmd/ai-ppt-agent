@@ -13,18 +13,10 @@ from pptx.enum.shapes import MSO_SHAPE
 from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.util import Inches, Pt
 
-import streamlit as st
-import os
-from dotenv import load_dotenv
-
 load_dotenv()
 
 api_key = os.getenv("DEEPSEEK_API_KEY")
 
-if not api_key:
-    api_key = st.secrets.get("DEEPSEEK_API_KEY")
-
-# 线上部署时，从 Streamlit Secrets 读取密钥
 if not api_key:
     try:
         api_key = st.secrets["DEEPSEEK_API_KEY"]
